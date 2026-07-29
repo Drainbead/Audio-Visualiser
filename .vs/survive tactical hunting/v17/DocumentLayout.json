@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\EXS\\survive tactical hunting\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1DD767EA-1A38-9E4D-6628-5574FBC1CBB1}|Assembly-CSharp.csproj|c:\\users\\exs\\survive tactical hunting\\assets\\beatcube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DD767EA-1A38-9E4D-6628-5574FBC1CBB1}|Assembly-CSharp.csproj|solutionrelative:assets\\beatcube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DD767EA-1A38-9E4D-6628-5574FBC1CBB1}|Assembly-CSharp.csproj|c:\\users\\exs\\survive tactical hunting\\assets\\audiovisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DD767EA-1A38-9E4D-6628-5574FBC1CBB1}|Assembly-CSharp.csproj|solutionrelative:assets\\audiovisualiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1DD767EA-1A38-9E4D-6628-5574FBC1CBB1}|Assembly-CSharp.csproj|C:\\Users\\EXS\\survive tactical hunting\\assets\\desktopaudiocapture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1DD767EA-1A38-9E4D-6628-5574FBC1CBB1}|Assembly-CSharp.csproj|solutionrelative:assets\\desktopaudiocapture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BeatCube.cs",
+              "DocumentMoniker": "C:\\Users\\EXS\\survive tactical hunting\\Assets\\BeatCube.cs",
+              "RelativeDocumentMoniker": "Assets\\BeatCube.cs",
+              "ToolTip": "C:\\Users\\EXS\\survive tactical hunting\\Assets\\BeatCube.cs",
+              "RelativeToolTip": "Assets\\BeatCube.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAiwI4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-29T01:08:39.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DesktopAudioCapture.cs",
+              "DocumentMoniker": "C:\\Users\\EXS\\survive tactical hunting\\Assets\\DesktopAudioCapture.cs",
+              "RelativeDocumentMoniker": "Assets\\DesktopAudioCapture.cs",
+              "ToolTip": "C:\\Users\\EXS\\survive tactical hunting\\Assets\\DesktopAudioCapture.cs",
+              "RelativeToolTip": "Assets\\DesktopAudioCapture.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T00:26:45.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AudioVisualiser.cs",
+              "DocumentMoniker": "C:\\Users\\EXS\\survive tactical hunting\\Assets\\AudioVisualiser.cs",
+              "RelativeDocumentMoniker": "Assets\\AudioVisualiser.cs",
+              "ToolTip": "C:\\Users\\EXS\\survive tactical hunting\\Assets\\AudioVisualiser.cs",
+              "RelativeToolTip": "Assets\\AudioVisualiser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T21:39:08.902Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
