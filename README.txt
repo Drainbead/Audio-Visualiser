@@ -31,7 +31,7 @@ survive tactical hunting.exe
 
 You do not need Unity installed to try the visualiser.
 
-However, you still need:
+However, you still need to download and install:
 
 VB-Audio Virtual Cable
 Voicemeeter
@@ -51,7 +51,10 @@ Unity 6.3+
 Clone the project and open it in Unity.
 
 Audio Setup
-Install Required Software
+Install Required Software - 
+
+VB-Audio Virtual Cable and
+Voicemeeter
 
 Install:
 
@@ -88,10 +91,8 @@ Windows Sound Settings
 
 Set:
 
-Output device
-Voicemeeter Input
-Input device
-CABLE Output (VB-Audio Virtual Cable)
+Output device --> Voicemeeter Input
+Input device --> CABLE Output (VB-Audio Virtual Cable)
 Check Recording Devices
 
 Open:
@@ -118,7 +119,7 @@ MIC DEVICE: CABLE Output (VB-Audio Virtual Cable)
 
 MIC DEVICE: Microphone (C-Media USB Audio Device)
 
-Copy the exact device name you want to use.
+Copy the exact device name you want to use to copy into DesktopAudioCapture script field in the inspector.
 
 In Unity:
 
@@ -136,6 +137,7 @@ Controls
 F1 = Desktop Audio mode
 
 F2 = Microphone mode
+
 Running The Project
 Open the project in Unity 6.3+
 Configure your audio device
