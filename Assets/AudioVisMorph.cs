@@ -1,20 +1,8 @@
 using UnityEngine;
 using UnityEngine.Audio;
-//https://www.youtube.com/watch?v=7OjqeyOvC1c woodwind instruments THIS IS BEST and https://www.youtube.com/watch?v=v62YjjV-Roo
-//https://www.youtube.com/watch?v=IwZ8Q9VvknY 50 bird calls AWESOME
-// https://www.youtube.com/watch?v=8wWHEE4A9xQ
-//https://music.youtube.com/watch?v=lPUk7AQuoLM&list=LM
-//https://www.youtube.com/watch?v=FBglnc2D9y4 // adele vocals accapella
-//https://www.youtube.com/watch?v=qISirGv3Mho creep accapella by a woman
-// https://music.youtube.com/watch?v=dZ3IHSLpV_c&list=LM
-// https://music.youtube.com/watch?v=59Q_lhgGANc&list=LM
-//https://music.youtube.com/watch?v=Gn6SNbTD0_Q&list=LM jackie wilsome - higher and higher
-//https://www.youtube.com/watch?v=AnUt3eRGIeE&list=PLDDC74011619A10AE&index=25 ocarina of time
-//https://www.youtube.com/watch?v=yfrhek3O8ew&list=PLDDC74011619A10AE&index=31 ocarina some level
-//https://soundcloud.com/crucia/crucia-hackers
-//https://soundcloud.com/auxy24000/game-0ver-original
 
-public class AudioVisualiser : MonoBehaviour
+
+public class AudioVisMorph : MonoBehaviour
 {
     [Header("Scene References")]
     public Transform pivot;
