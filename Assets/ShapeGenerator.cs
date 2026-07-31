@@ -4,9 +4,12 @@ using UnityEngine;
 public class ShapeGenerator : MonoBehaviour
 {
     public float height = 5f;
+    public float wavyHeight = 2f;
+    public float wavyFrequency = 0.25f;
     public SavedShapes savedShapes;
     public string shapeName = "Circle";
     private List<Vector3> generatedPositions = new List<Vector3>();
+    public int waveCount = 16;
     public enum Shape
     {
         Circle,
@@ -20,6 +23,8 @@ public class ShapeGenerator : MonoBehaviour
         LetterA,
         Line,
         CoilSnake,
+        CoilCircle,
+        WavyLine,
         Grid
     }
 
@@ -36,6 +41,13 @@ public class ShapeGenerator : MonoBehaviour
     [Header("Coil Snake")]
     public float coilSpacing = 1f;
     public int coilStepLength = 3;
+    [Header("Snake Wave")]
+    public float waveHeight = 2f;
+    public float waveFrequency = 0.15f;
+
+    [Header("Circle Coil")]
+    public float CirclecoilcoilSpacing = 0.5f;
+    public float coilTurnSpeed = 0.25f;
 
     [Header("Line")]
     public float lineSpacing = 1f;
@@ -130,6 +142,14 @@ public class ShapeGenerator : MonoBehaviour
             case Shape.CoilSnake:
                 GenerateCoilSnake();
                 break;
+
+            case Shape.CoilCircle:
+                GenerateCoilCircle();
+                break;
+
+            case Shape.WavyLine:
+                GenerateWavyLine();
+                break;
         }
        
     }
@@ -172,10 +192,10 @@ public class ShapeGenerator : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             Spawn(new Vector3(
-                pos.x,
-                height,
-                pos.z
-            ));
+     pos.x,
+     height + Mathf.Sin(i * waveFrequency) * waveHeight,
+     pos.z
+ ));
 
 
             pos += directions[directionIndex] * coilSpacing;
@@ -205,6 +225,25 @@ public class ShapeGenerator : MonoBehaviour
             }
         }
     }
+    void GenerateCoilCircle()
+    {
+        float angle = 0f;
+
+        for (int i = 0; i < count; i++)
+        {
+            float radius = CirclecoilcoilSpacing * angle / (Mathf.PI * 2f);
+
+            Vector3 pos = new Vector3(
+                Mathf.Cos(angle) * radius,
+                height,
+                Mathf.Sin(angle) * radius
+            );
+
+            Spawn(pos);
+
+            angle += coilTurnSpeed;
+        }
+    }
     void GenerateLine()
     {
         for (int i = 0; i < count; i++)
@@ -229,6 +268,37 @@ public class ShapeGenerator : MonoBehaviour
                 );
             }
 
+
+            Spawn(pos);
+        }
+    }
+    void GenerateWavyLine()
+    {
+        for (int i = 0; i < count; i++)
+        {
+            float t = (float)i / (count - 1);
+
+            float offset =
+                Mathf.Sin(t * Mathf.PI * waveCount) * wavyHeight; ;
+
+            Vector3 pos;
+
+            if (verticalLine)
+            {
+                pos = new Vector3(
+                    offset,
+                    (i - count / 2f) * lineSpacing,
+                    0
+                );
+            }
+            else
+            {
+                pos = new Vector3(
+                    (i - count / 2f) * lineSpacing,
+                    height + offset,
+                    0
+                );
+            }
 
             Spawn(pos);
         }

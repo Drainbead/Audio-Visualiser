@@ -64,14 +64,17 @@
     <Compile Include="Assets\ShapeMorpher.cs" />
     <Compile Include="Assets\CircleSpawner.cs" />
     <Compile Include="Assets\AudioVisMorph.cs" />
+    <Compile Include="Assets\Audio512Floor.cs" />
     <Compile Include="Assets\ShapeGenerator.cs" />
     <Compile Include="Assets\ShapeData.cs" />
     <Compile Include="Assets\DesktopAudioCapture.cs" />
     <Compile Include="Assets\BeatCube.cs" />
     <Compile Include="Assets\AudioVisualiser.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\TorusGenerator.cs" />
     <Compile Include="Assets\Audio256.cs" />
     <Compile Include="Assets\Audio128.cs" />
+    <Compile Include="Assets\CameraLerp.cs" />
     <Compile Include="Assets\SavedShapes.cs" />
     <Compile Include="Assets\AudioManager.cs" />
   </ItemGroup>

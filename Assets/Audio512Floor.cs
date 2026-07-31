@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 
-public class Audio256 : MonoBehaviour
+public class Audio512Floor : MonoBehaviour
 {
     [Header("Scene References")]
     public Transform pivot;
@@ -43,17 +43,6 @@ public class Audio256 : MonoBehaviour
     public float baseRotationSpeed = 20f;
     public float rotationMultiplier = 500f;
     public float rotationAcceleration = 5f;
-
-    [Header("Object Animation")]  ///  Lerps THIS gameobject not all the cubes
-    public Transform animatedObject;
-
-    public float animationSpeed = 1f;
-
-    public float minRotationY = 0f;
-    public float maxRotationY = 50f;
-
-    public float minScaleZ = 1f;
-    public float maxScaleZ = 7f;
 
     private float[] rotationVelocities;
 
@@ -182,7 +171,6 @@ public class Audio256 : MonoBehaviour
     }
     void Update()
     {
-        AnimateObject();
         bands = audioManager.GetBands(bars.Length);
 
 
@@ -372,29 +360,5 @@ renderer.SetPropertyBlock(propertyBlock);
             }
         }
         MorphShapes();
-    }
-
-    void AnimateObject()
-    {
-        if (animatedObject == null)
-            return;
-
-        float t = (Mathf.Sin(Time.time * animationSpeed) + 1f) * 0.5f;
-
-        Vector3 rotation = animatedObject.localEulerAngles;
-        rotation.y = Mathf.Lerp(
-            minRotationY,
-            maxRotationY,
-            t
-        );
-        animatedObject.localEulerAngles = rotation;
-
-        Vector3 scale = animatedObject.localScale;
-        scale.z = Mathf.Lerp(
-            minScaleZ,
-            maxScaleZ,
-            t
-        );
-        animatedObject.localScale = scale;
     }
 }
