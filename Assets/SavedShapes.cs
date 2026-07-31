@@ -27,7 +27,14 @@ public class SavedShapes : MonoBehaviour
 
         shapeAsset.shapeName = name;
         shapeAsset.positions = positions;
+#if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(shapeAsset);
+#endif
 
+        Debug.Log(
+            "Saved " + name +
+            " with " + positions.Length + " positions"
+        );
 
 #if UNITY_EDITOR
         EditorUtility.SetDirty(shapeAsset);

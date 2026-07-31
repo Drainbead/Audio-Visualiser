@@ -18,6 +18,8 @@ public class ShapeGenerator : MonoBehaviour
         Sphere,
         Star,
         LetterA,
+        Line,
+        CoilSnake,
         Grid
     }
 
@@ -30,6 +32,14 @@ public class ShapeGenerator : MonoBehaviour
 
     [Header("Circle")]
     public float radius = 10f;
+
+    [Header("Coil Snake")]
+    public float coilSpacing = 1f;
+    public int coilStepLength = 3;
+
+    [Header("Line")]
+    public float lineSpacing = 1f;
+    public bool verticalLine = false;
 
     [Header("Spiral")]
     public float spiralGrowth = 0.15f;
@@ -112,6 +122,14 @@ public class ShapeGenerator : MonoBehaviour
             case Shape.LetterA:
                 GenerateLetterA();
                 break;
+
+            case Shape.Line:
+                GenerateLine();
+                break;
+
+            case Shape.CoilSnake:
+                GenerateCoilSnake();
+                break;
         }
        
     }
@@ -127,6 +145,90 @@ public class ShapeGenerator : MonoBehaviour
                 height,
                 Mathf.Sin(angle)
             ) * r;
+
+            Spawn(pos);
+        }
+    }
+    void GenerateCoilSnake()
+    {
+        Vector3 pos = Vector3.zero;
+
+        Vector3[] directions =
+        {
+        Vector3.forward,
+        Vector3.left,
+        Vector3.back,
+        Vector3.right
+    };
+
+        int directionIndex = 0;
+
+        int stepsTaken = 0;
+        int stepsNeeded = coilStepLength;
+
+        int lengthIncrease = 0;
+
+
+        for (int i = 0; i < count; i++)
+        {
+            Spawn(new Vector3(
+                pos.x,
+                height,
+                pos.z
+            ));
+
+
+            pos += directions[directionIndex] * coilSpacing;
+
+
+            stepsTaken++;
+
+
+            if (stepsTaken >= stepsNeeded)
+            {
+                stepsTaken = 0;
+
+                directionIndex++;
+
+                if (directionIndex >= directions.Length)
+                {
+                    directionIndex = 0;
+                }
+
+
+                lengthIncrease++;
+
+                if (lengthIncrease % 2 == 0)
+                {
+                    stepsNeeded++;
+                }
+            }
+        }
+    }
+    void GenerateLine()
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 pos;
+
+
+            if (verticalLine)
+            {
+                pos = new Vector3(
+                    0,
+                    (i - count / 2f) * lineSpacing,
+                    0
+                );
+            }
+            else
+            {
+                pos = new Vector3(
+                    (i - count / 2f) * lineSpacing,
+                    height,
+                    0
+                );
+            }
+
 
             Spawn(pos);
         }

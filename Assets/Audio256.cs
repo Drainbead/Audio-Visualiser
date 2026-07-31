@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 
-public class AudioVisMorph : MonoBehaviour
+public class Audio256 : MonoBehaviour
 {
     [Header("Scene References")]
     public Transform pivot;

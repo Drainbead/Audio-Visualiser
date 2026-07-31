@@ -47,8 +47,7 @@ public class ShapeMorpher : MonoBehaviour
         }
     }
 
-
-    void Update()
+    private void morphs()
     {
         if (shapes == null || shapes.Length < 2)
             return;
@@ -81,6 +80,66 @@ public class ShapeMorpher : MonoBehaviour
 
             cubes[i].position = Vector3.Lerp(
                 cubes[i].position,
+                target,
+                Time.deltaTime * moveSpeed
+            );
+            if (scaleWithMorph)
+            {
+                float scaleWave = Mathf.Sin(morphAmount * Mathf.PI);
+
+                float targetScale =
+                    Mathf.Lerp(
+                        minScaleY,
+                        maxScaleY,
+                        scaleWave
+                    );
+
+
+                Vector3 scale = cubes[i].localScale;
+
+                scale.y = Mathf.Lerp(
+                    scale.y,
+                    targetScale,
+                    Time.deltaTime * moveSpeed * breatheSpeed
+                );
+
+                cubes[i].localScale = scale;
+            }
+        }
+    }
+    void Update()
+    {
+        if (shapes == null || shapes.Length < 2)
+            return;
+
+
+        int nextShape = currentShape + 1;
+
+        if (nextShape >= shapes.Length)
+            nextShape = 0;
+
+
+        morphAmount += Time.deltaTime / morphDuration;
+
+
+        if (morphAmount >= 1f)
+        {
+            morphAmount = 0f;
+            currentShape = nextShape;
+        }
+
+
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 target = Vector3.Lerp(
+                shapes[currentShape].positions[i],
+                shapes[nextShape].positions[i],
+                morphAmount
+            );
+
+
+            cubes[i].localPosition = Vector3.Lerp(
+                cubes[i].localPosition,
                 target,
                 Time.deltaTime * moveSpeed
             );

@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{1DD767EA-1A38-9E4D-6628-5574FBC1CBB1}</ProjectGuid>
+    <ProjectGuid>{1D822952-FABD-079B-BA8F-64C908E9491F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -61,10 +61,19 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.3.2f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ShapeMorpher.cs" />
+    <Compile Include="Assets\CircleSpawner.cs" />
+    <Compile Include="Assets\AudioVisMorph.cs" />
+    <Compile Include="Assets\ShapeGenerator.cs" />
+    <Compile Include="Assets\ShapeData.cs" />
     <Compile Include="Assets\DesktopAudioCapture.cs" />
     <Compile Include="Assets\BeatCube.cs" />
     <Compile Include="Assets\AudioVisualiser.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Audio256.cs" />
+    <Compile Include="Assets\Audio128.cs" />
+    <Compile Include="Assets\SavedShapes.cs" />
+    <Compile Include="Assets\AudioManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
